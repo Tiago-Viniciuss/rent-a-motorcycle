@@ -231,7 +231,7 @@ table td {
 #booking {
     text-align: center;
     gap: 45px;
-    height: 400px;
+    height: 600px;
     display: none;
 }
 
@@ -280,6 +280,72 @@ table td {
 #booking button:hover {
     background-color: black;
     color: white;
+}
+
+#article {
+    padding-bottom: 100px;
+}
+
+#article h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+#article p {
+    text-align: justify;
+    text-indent: 25px;
+    width: 300px;
+    line-height: 2em;
+    margin: auto;
+}
+
+#footer {
+    padding: 15px;
+}
+
+#footer p {
+    color: white;
+    width: 250px;
+    margin: 15px 0px 15px 30px;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+#clientPlus {
+    height: 0px;
+    visibility: hidden;
+    transition: .5s;
+    overflow-y: hidden;
+    
+}
+
+#clientPlus.on {
+    visibility: visible;
+    height: 150px;
+}
+
+#clientPlus p {
+    font-size: 0.8em;
+    margin: 2px 0px 2px 45px;
+}
+
+#workshopPlus {
+    height: 0px;
+    visibility: hidden;
+    transition: .5s;
+    overflow-y: hidden;
+    
+}
+
+#workshopPlus.on {
+    visibility: visible;
+    height: 150px;
+}
+
+#workshopPlus p {
+    font-size: 0.8em;
+    margin: 2px 0px 2px 45px;
 }
 
 
@@ -333,8 +399,4 @@ table td {
 .form-select {
     width: 300px;
     margin: auto;
-}
-
-#finishBooking {
-
 }

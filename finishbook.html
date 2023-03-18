@@ -20,8 +20,8 @@
 <body onresize="changeLogo()" onload="loadData()">
     <header id="header" class="bg-dark text-white">
         <div>
-            <img id="brandMobile" src="imagens/brandMobile.png" alt="brand">
-            <img id="brandDesktop" src="imagens/brandDesktop.png" alt="">
+            <a href="index.html"><img id="brandMobile" src="imagens/brandMobile.png" alt="brand"></a>
+            <a href="index.html"><img id="brandDesktop" src="imagens/brandDesktop.png" alt=""></a>
         </div>
         <button class="btn text-white border-0 material-symbols-outlined" id="menuButton"
             onclick="showMenu()">menu</button>
@@ -29,7 +29,7 @@
     </header>
     <nav id="menu" class="bg-dark">
         <a href="index.html" class="text-white text-decoration-none m-2">Home</a>
-        <a href="#" class="text-white text-decoration-none m-2">About</a>
+        <a href="#" class="text-white text-decoration-none m-2">Crew</a>
         <a href="#" class="text-white text-decoration-none m-2">Models</a>
         <a href="#" class="text-white text-decoration-none m-2">Contact</a>
     </nav>
@@ -92,9 +92,9 @@
                 <option value="Mastercard">Mastercard</option>
                 <option value="Mastercard">Visa</option>
                 <option value="Mastercard">American Express</option>
-            </select>
-            <input type="submit" value="Finish Booking" class="btn btn-dark" id="finishBooking" onclick="finishBooking()">
+            </select>  
         </form>
+        <input type="submit" value="Finish Booking" class="btn btn-dark" id="finishBooking" onclick="finishBooking()">
     </section>
     <script src="script.js"></script>
 </body>

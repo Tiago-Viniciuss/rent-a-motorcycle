@@ -13,6 +13,17 @@ function showMenu() {
     }
 }
 
+function closeMenu() {
+    let menu = document.getElementById('menu')
+    let menuComplement = document.getElementById('menuComplement')
+    let button = document.getElementById('menuButton')
+
+    menu.classList.toggle('active')
+    menuComplement.classList.toggle('active')
+    button.innerHTML = 'menu'
+
+}
+
 function changeLogo() {
     let brandMobile = document.getElementById('brandMobile')
     let brandDesktop = document.getElementById('brandDesktop')
@@ -182,4 +193,16 @@ function loadData() {
 
 function finishBooking() {
     location.href = 'index.html'
+}
+
+function openClientPlus() {
+    let clientMenu = document.getElementById('clientPlus')
+
+    clientMenu.classList.toggle('on')
+}
+
+function openWorkshopPlus() {
+    let workshopMenu = document.getElementById('workshopPlus')
+
+    workshopMenu.classList.toggle('on')
 }

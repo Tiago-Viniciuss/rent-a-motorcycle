@@ -20,18 +20,19 @@
 <body onresize="changeLogo()">
     <header id="header" class="bg-dark text-white">
         <div>
-            <img id="brandMobile" src="imagens/brandMobile.png" alt="brand">
-            <img id="brandDesktop" src="imagens/brandDesktop.png" alt="">
+            <a href="index.html"><img id="brandMobile" src="imagens/brandMobile.png" alt="brand"></a>
+            <a href="index.html
+            "><img id="brandDesktop" src="imagens/brandDesktop.png" alt=""></a>
         </div>
         <button class="btn text-white border-0 material-symbols-outlined" id="menuButton"
             onclick="showMenu()">menu</button>
 
     </header>
     <nav id="menu" class="bg-dark">
-        <a href="#" class="text-white text-decoration-none m-2">Home</a>
-        <a href="#" class="text-white text-decoration-none m-2">About</a>
-        <a href="#" class="text-white text-decoration-none m-2">Models</a>
-        <a href="#" class="text-white text-decoration-none m-2">Contact</a>
+        <a href="#" class="text-white text-decoration-none m-2" onclick="closeMenu()">Home</a>
+        <a href="#" class="text-white text-decoration-none m-2">Crew</a>
+        <a href="#selectBikeTitle" class="text-white text-decoration-none m-2" onclick="closeMenu()">Models</a>
+        <a href="#footer" class="text-white text-decoration-none m-2" onclick="closeMenu()">Contact</a>
     </nav>
     <div id="menuComplement" class="bg-dark">
 
@@ -58,9 +59,8 @@
             <div class="bg-dark" id="hitTheRoad"></div>
             <p>The next step is get your bike at one of our shops and hit the road! Enjoy it!</p>
         </div>
-           
     </section>
-    <h2 class="selectBikeTitle">Bike Models</h2>
+    <h2 class="selectBikeTitle" id="selectBikeTitle">Bike Models</h2>
     <p class="selectBikeParagraph">Select the best one for you and enjoy it</p>
     <section id="selectBike">
         <div id="bikeMarks">
@@ -124,12 +124,67 @@
             <option>R2W Downtown</option>
         </select>
         <label>Pick-up date:</label> <br>
-        <input type="date"  class="form-control" id="pickupDate"> <br>
+        <input type="date" class="form-control" id="pickupDate"> <br>
         <label>Drop-of date:</label> <br>
         <input type="date" class="form-control" id="dropofDate"> <br>
         <input type="submit" value="Send Request" id="sendRequest" onclick="sendRequest()"> <br>
         <button class="btn" onclick="cancelBooking()">Cancel</button>
     </div>
+    <article id="article">
+        <h2>
+            Why to travel in a motorcycle?
+        </h2>
+        <div>
+            <iframe class="d-block mx-auto mt-3 mb-5" width="320" height="315"
+                src="https://www.youtube.com/embed/X9eg00Sx6kM" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <p>
+            Traveling by motorcycle can be an amazing and unforgettable experience for those who enjoy adventure and
+            freedom. Unlike other forms of transportation, traveling by motorcycle allows for a greater connection with
+            the road, the environment, and the people encountered along the way.
+            <br>
+            One of the main benefits of traveling by motorcycle is the sense of freedom. You can stop anywhere you want,
+            at any time, without depending on predefined schedules or itineraries. Additionally, you have the
+            opportunity to experience the landscape, smells, and sounds much more intensely than in a car or airplane.
+            <br>
+            Traveling by motorcycle can also be more economical than other forms of transportation, especially if you
+            are looking for a long-distance ride. Additionally, motorcycles are usually more agile on winding roads or
+            heavy traffic, which can save time and frustration.
+            <br>
+            However, it is important to remember that traveling by motorcycle requires more skill and attention than
+            other forms of transportation. It is essential that you are an experienced rider and familiar with the
+            motorcycle. Additionally, it is necessary to use appropriate safety equipment, such as helmets and resistant
+            clothing.
+            <br>
+            In summary, traveling by motorcycle can be an exciting and rewarding experience, but it is important to be
+            prepared and take necessary precautions to ensure a safe and comfortable trip. If you are looking for a
+            unique and exciting way to explore new places, the motorcycle may be the perfect choice for you an we are
+            ready to help you with your dreams. Let's Ride!
+        </p>
+    </article>
+    <footer id="footer" class="bg-dark">
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openClientPlus()">+ Client Support</p>
+        <div id="clientPlus">
+            <p>Phone Number</p>
+            <p>Red Line</p>
+            <p>Payment Doubt</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openWorkshopPlus()">+ Workshop</p>
+        <div id="workshopPlus">
+            <p>Find a Workshop</p>
+            <p>Knowing the Bike</p>
+            <p>Ride Safe</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p>+ Car Insurance</p>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p>+ About Us</p>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+    </footer>
     <script src="script.js"></script>
 </body>
 
