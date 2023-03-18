@@ -106,9 +106,30 @@
                     </tr>
                 </tbody>
             </table>
-            <button id="reserveButton">Reserve Now</button>
+            <input class="form-control" type="text" id="username" placeholder="What's your name?" required>
+            <button class="btn btn-dark" id="reserveButton" onclick="openBooking()">Reserve Now</button>
         </div>
     </section>
+    <div id="booking">
+        <label class="form-label">Pick-up Location</label>
+        <select class="form-select form-control" id="pickup">
+            <option class="pickup">R2W Airport</option>
+            <option class="pickup">R2W Garden Village</option>
+            <option class="pickup">R2W Downtown</option>
+        </select>
+        <label class="form-label">Drop-of Location</label>
+        <select class="form-select form-control" id="dropof">
+            <option>R2W Airport</option>
+            <option>R2W Garden Village</option>
+            <option>R2W Downtown</option>
+        </select>
+        <label>Pick-up date:</label> <br>
+        <input type="date"  class="form-control" id="pickupDate"> <br>
+        <label>Drop-of date:</label> <br>
+        <input type="date" class="form-control" id="dropofDate"> <br>
+        <input type="submit" value="Send Request" id="sendRequest" onclick="sendRequest()"> <br>
+        <button class="btn" onclick="cancelBooking()">Cancel</button>
+    </div>
     <script src="script.js"></script>
 </body>
 
