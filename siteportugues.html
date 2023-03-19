@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,51 +20,51 @@
 <body onresize="changeLogo()">
     <header id="header" class="bg-dark text-white">
         <div>
-            <a href="index.html"><img id="brandMobile" src="imagens/brandMobile.png" alt="brand"></a>
+            <a href="siteportugues.html"><img id="brandMobile" src="imagens/brandMobile.png" alt="brand"></a>
             <a href="index.html
             "><img id="brandDesktop" src="imagens/brandDesktop.png" alt=""></a>
         </div>
-        <button id="changeLanguage1" onclick="changeLanguage2()"><img src="imagens/language1.png" alt=""></button>
-        <a href="siteportugues.html" id="language2">
-            <span class="portugal"><img src="imagens/language2.png" alt=""></span></a>
+        <button id="changeLanguage2" onclick="changeLanguage1()"><img src="imagens/language2.png" alt=""></button>
+        <a href="siteportugues.html">
+        <a href="index.html" id="language1"><span class="usa"><img src="imagens/language1.png" alt=""></span></a>
         <button class="btn text-white border-0 material-symbols-outlined" id="menuButton"
             onclick="showMenu()">menu</button>
 
     </header>
     <nav id="menu" class="bg-dark">
         <a href="#" class="text-white text-decoration-none m-2" onclick="closeMenu()">Home</a>
-        <a href="#" class="text-white text-decoration-none m-2">Crew</a>
-        <a href="#selectBikeTitle" class="text-white text-decoration-none m-2" onclick="closeMenu()">Models</a>
-        <a href="#footer" class="text-white text-decoration-none m-2" onclick="closeMenu()">Contact</a>
+        <a href="#" class="text-white text-decoration-none m-2">Equipe</a>
+        <a href="#selectBikeTitle" class="text-white text-decoration-none m-2" onclick="closeMenu()">Modelos</a>
+        <a href="#footer" class="text-white text-decoration-none m-2" onclick="closeMenu()">Contato</a>
     </nav>
     <div id="menuComplement" class="bg-dark">
 
     </div>
     <section id="section1">
         <div class="ms-4">
-            <h1>Ready to the Road?</h1>
+            <h1>Pronto para a Estrada?</h1>
             <p>
-                Rent a bike!
+                Alugue uma Moto!
             </p>
             <img id="bike1" src="imagens/motorcycle1.png" alt="">
         </div>
     </section>
 
     <section id="howToRent">
-        <h2>How to start?</h2>
-        <p>You can find here some tips:</p>
+        <h2>Como começar?</h2>
+        <p>Encontre algumas dicas aqui:</p>
         <div id="tips">
             <div class="bg-dark" id="chooseBike"></div>
-            <p>You can find more than 25 models of motorcycles and choose the best bike for your needs
+            <p>Você pode encontrar mais de 25 modelos de motocicletas e escolher a que melhor se adequa às suas necessidades
             </p>
             <div class="bg-dark" id="callOperator"></div>
-            <p>With a simple call, message or using the app, you can talk with our friendly operators</p>
+            <p>Com uma simples ligação, mensagem ou através do nosso app, você pode falar com nossos amigáveis operadores</p>
             <div class="bg-dark" id="hitTheRoad"></div>
-            <p>The next step is get your bike at one of our shops and hit the road! Enjoy it!</p>
+            <p>O próximo passo é pegar sua moto em uma de nossas lojas e cair na estrada! Aproveite!</p>
         </div>
     </section>
-    <h2 class="selectBikeTitle" id="selectBikeTitle">Bike Models</h2>
-    <p class="selectBikeParagraph">Select the best one for you and enjoy it</p>
+    <h2 class="selectBikeTitle" id="selectBikeTitle">Modelos de Motos</h2>
+    <p class="selectBikeParagraph">Faça sua melhor escolha e aproveite!</p>
     <section id="selectBike">
         <div id="bikeMarks">
             <p class="bikeMark selected">Harley Davidson Iron 883</p>
@@ -86,56 +86,56 @@
             <table>
                 <thead>
                     <tr>
-                        <th id="price">$45/per day</th>
+                        <th id="price">R$150/por dia</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Model</td>
+                        <td>Modelo</td>
                         <td id="bikeName"><strong>Iron 883</strong></td>
                     </tr>
                     <tr>
-                        <td>Brand</td>
+                        <td>Marca</td>
                         <td id="bikeMarkName"><strong>Harley Davidson</strong></td>
                     </tr>
                     <tr>
-                        <td>Year</td>
+                        <td>Ano</td>
                         <td id="bikeYear"><strong>2015</strong></td>
                     </tr>
                     <tr>
-                        <td>Fuel</td>
-                        <td id="bikeFuel"><strong>Gasoline</strong></td>
+                        <td>Combustível</td>
+                        <td id="bikeFuel"><strong>Gasolina</strong></td>
                     </tr>
                 </tbody>
             </table>
-            <input class="form-control" type="text" id="username" placeholder="What's your name?" required>
-            <button class="btn btn-dark" id="reserveButton" onclick="openBooking()">Reserve Now</button>
+            <input class="form-control" type="text" id="username" placeholder="Qual o seu nome?" required>
+            <button class="btn btn-dark" id="reserveButton" onclick="openBooking()">Reserve agora</button>
         </div>
     </section>
     <div id="booking">
-        <label class="form-label">Pick-up Location:</label>
+        <label class="form-label">Retirar a moto em:</label>
         <select class="form-select form-control" id="pickup">
-            <option class="pickup">Airport</option>
+            <option class="pickup">Aeroporto</option>
             <option class="pickup">Garden Village</option>
-            <option class="pickup">R2W Downtown</option>
+            <option class="pickup">R2W Centro</option>
         </select>
-        <label class="form-label">Drop-off Location:</label>
+        <label class="form-label">Devolver moto em:</label>
         <select class="form-select form-control" id="dropof">
-            <option>Airport</option>
+            <option>Aeroporto</option>
             <option>Garden Village</option>
-            <option>R2W Downtown</option>
+            <option>R2W Centro</option>
         </select>
-        <label>Pick-up date:</label> <br>
+        <label>Data da retirada:</label> <br>
         <input type="date" class="form-control" id="pickupDate"> <br>
-        <label>Drop-off date:</label> <br>
+        <label>Data da devolução:</label> <br>
         <input type="date" class="form-control" id="dropofDate"> <br>
-        <input type="submit" value="Send Request" id="sendRequest" onclick="sendRequest()"> <br>
-        <button class="btn" onclick="cancelBooking()">Cancel</button>
+        <input type="submit" value="Enviar Pedido" id="sendRequest" onclick="sendRequest()"> <br>
+        <button class="btn" onclick="cancelBooking()">Cancelar</button>
     </div>
     <article id="article">
         <h2>
-            Why to travel by motorcycle?
+            Por que viajar de moto?
         </h2>
         <div>
             <iframe class="d-block mx-auto mt-3 mb-5" width="320" height="315"
@@ -144,48 +144,47 @@
                 allowfullscreen></iframe>
         </div>
         <p>
-            Traveling by motorcycle can be an amazing and unforgettable experience for those who enjoy adventure and
-            freedom. Unlike other forms of transportation, traveling by motorcycle allows for a greater connection with
-            the road, the environment, and the people encountered along the way.
+            Viajar de moto pode ser uma experiência incrível e inesquecível para quem gosta de aventura e
+            liberdade. Diferente de outros meios de transporte, a moto permite uma maior conexão com
+            a estrada, o ambiente e as pessoas encontradas ao longo do caminho.
             <br>
-            One of the main benefits of traveling by motorcycle is the sense of freedom. You can stop anywhere you want,
-            at any time, without depending on predefined schedules or itineraries. Additionally, you have the
-            opportunity to experience the landscape, smells, and sounds much more intensely than in a car or airplane.
+            Um dos principais benefícios de viajar de moto é a sensação de liberdade. Você pode parar onde quiser,
+            a qualquer momento, sem depender de horários ou itinerários pré-definidos. Além disso, você tem a
+            oportunidade de sentir a paisagem, cheiros e sons com muito mais intensidade do que em um carro ou avião.
             <br>
-            Traveling by motorcycle can also be more economical than other forms of transportation, especially if you
-            are looking for a long-distance ride. Additionally, motorcycles are usually more agile on winding roads or
-            heavy traffic, which can save time and frustration.
+            Viajar de moto também pode ser mais econômico do que outros meios de transporte, especialmente se você
+            estão procurando um passeio de longa distância. Além disso, as motocicletas costumam ser mais ágeis em estradas sinuosas ou
+            tráfego pesado, o que pode economizar tempo e frustração.
             <br>
-            However, it is important to remember that traveling by motorcycle requires more skill and attention than
-            other forms of transportation. It is essential that you are an experienced rider and familiar with the
-            motorcycle. Additionally, it is necessary to use appropriate safety equipment, such as helmets and resistant
-            clothing.
+            Porém, é importante lembrar que a moto exige mais habilidade e atenção do que
+            outras formas de transporte. É essencial que você seja um piloto experiente e familiarizado com a
+            motocicleta. Além disso, é necessário o uso de equipamentos de segurança adequados, como capacetes e roupas resistentes.
             <br>
-            In summary, traveling by motorcycle can be an exciting and rewarding experience, but it is important to be
-            prepared and take necessary precautions to ensure a safe and comfortable trip. If you are looking for a
-            unique and exciting way to explore new places, the motorcycle may be the perfect choice for you an we are
-            ready to help you with your dreams. Let's Ride!
+            Em resumo, viajar de moto pode ser uma experiência emocionante e gratificante, mas é importante estar
+            preparado e tomar as precauções necessárias para garantir uma viagem segura e confortável. Se você está procurando uma
+            maneira única e emocionante de explorar novos lugares, a motocicleta pode ser a escolha perfeita para você e nós estamos
+            prontos para ajudá-lo com seus sonhos. Vamos pilotar!
         </p>
     </article>
     <footer id="footer" class="bg-dark">
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p onclick="openClientPlus()">+ Client Support</p>
+        <p onclick="openClientPlus()">+ Suporte ao cliente</p>
         <div id="clientPlus">
-            <p>Phone Number</p>
-            <p>Red Line</p>
-            <p>Payment Doubt</p>
+            <p>Nosso Telefone</p>
+            <p>Linha Vermelha</p>
+            <p>Dúvidas com Pagamentos</p>
         </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p onclick="openWorkshopPlus()">+ Workshop</p>
+        <p onclick="openWorkshopPlus()">+ Oficina</p>
         <div id="workshopPlus">
-            <p>Find a Workshop</p>
-            <p>Knowing the Bike</p>
-            <p>Ride Safe</p>
+            <p>Encontre uma Oficina</p>
+            <p>Conhecendo a Moto</p>
+            <p>Pilotagem Segura</p>
         </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p>+ Bike Insurance</p>
+        <p>+ Seguro da Moto</p>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p>+ About Us</p>
+        <p>+ Sobre Nós</p>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
     </footer>
     <script src="script.js"></script>

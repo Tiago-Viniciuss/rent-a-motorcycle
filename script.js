@@ -38,6 +38,27 @@ function changeLogo() {
 }
 
 
+function changeLanguage1() {
+    let language1 = document.getElementById('language1')
+
+    if(language1.style.display == 'none') {
+        language1.style.display = 'block'
+    } else {
+        language1.style.display = 'none'
+    }
+    
+}
+
+function changeLanguage2() {
+    let language2 = document.getElementById('language2')
+
+    if(language2.style.display == 'none') {
+        language2.style.display = 'block'
+    } else {
+        language2.style.display = 'none'
+    }
+}
+
 const bikes = document.querySelectorAll('.bikeMark')
 const picture = document.querySelectorAll('.image')
 const price = document.getElementById('price')
@@ -114,8 +135,6 @@ function openBooking() {
         localStorage.setItem('Bike Name', name)
         localStorage.setItem('Bike Mark', mark)
         localStorage.setItem('Username', username)
-
-        alert(`Let's Ride, ${username}!`)
 
         booking.style.display = 'block'
         location.href = '#booking'

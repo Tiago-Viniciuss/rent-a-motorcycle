@@ -20,21 +20,20 @@
 <body onresize="changeLogo()" onload="loadData()">
     <header id="header" class="bg-dark text-white">
         <div>
-            <a href="index.html"><img id="brandMobile" src="imagens/brandMobile.png" alt="brand"></a>
+            <a href="siteportugues.html"><img id="brandMobile" src="imagens/brandMobile.png" alt="brand"></a>
             <a href="index.html"><img id="brandDesktop" src="imagens/brandDesktop.png" alt=""></a>
         </div>
-        <button id="changeLanguage1" onclick="changeLanguage2()"><img src="imagens/language1.png" alt=""></button>
-        <a href="finalizarpedido.html" id="language2">
-            <span class="portugal"><img src="imagens/language2.png" alt=""></span></a>
+        <button id="changeLanguage2" onclick="changeLanguage1()"><img src="imagens/language2.png" alt=""></button>
+        <a href="finishbook.html" id="language1"><span class="usa"><img src="imagens/language1.png" alt=""></span></a>
         <button class="btn text-white border-0 material-symbols-outlined" id="menuButton"
             onclick="showMenu()">menu</button>
 
     </header>
     <nav id="menu" class="bg-dark">
         <a href="index.html" class="text-white text-decoration-none m-2">Home</a>
-        <a href="#" class="text-white text-decoration-none m-2">Crew</a>
-        <a href="#" class="text-white text-decoration-none m-2">Models</a>
-        <a href="#" class="text-white text-decoration-none m-2">Contact</a>
+        <a href="#" class="text-white text-decoration-none m-2">Equipe</a>
+        <a href="#" class="text-white text-decoration-none m-2">Modelos</a>
+        <a href="#" class="text-white text-decoration-none m-2">Contato</a>
     </nav>
     <div id="menuComplement" class="bg-dark">
 
@@ -42,37 +41,37 @@
     <table id="finishBook">
         <thead>
             <tr>
-                <th>Your booking:</th>
+                <th>Sua reserva:</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Name</td>
+                <td>Nome</td>
                 <td id="usernameBook"></td>
             </tr>
             <tr>
-                <td>Bike Model</td>
+                <td>Modelo da Moto</td>
                 <td id="bikemodelBook"></td>
             </tr>
             <tr>
-                <td>Bike Brand</td>
+                <td>Marca da Moto</td>
                 <td id="bikemarkBook"></strong></td>
             </tr>
             <tr>
-                <td>Pick-up Date</td>
+                <td>Data da Retirada</td>
                 <td id="pickupDateBook"></td>
             </tr>
             <tr>
-                <td>Drop-off Date</td>
+                <td>Data da Devolução</td>
                 <td id="dropofDateBook"></td>
             </tr>
             <tr>
-                <td>Pick-up Location</td>
+                <td>Local da Retirada</td>
                 <td id="pickupLocationBook"></td>
             </tr>
             <tr>
-                <td>Drop-off Location</td>
+                <td>Local da Devolução</td>
                 <td id="dropofLocationBook"></td>
             </tr>
         </tbody>
@@ -80,16 +79,16 @@
     <div id="bikeChosen">
     </div>
     <section id="complemental">
-        <h3>Complemental Information</h3>
+        <h3>Informações Complementares</h3>
         <form>
-            <label for="phone">Phone Number:</label>
+            <label for="phone">Número de Telefone:</label>
             <input class="form-control" type="tel" id="phone" placeholder="000 000 000" required>
-            <label for="age">Age:</label>
+            <label for="age">Idade:</label>
             <input class="form-control" type="number" placeholder="18" id="age" required>
             <label for="email">E-mail:</label>
-            <input class="form-control" type="email" id="email" placeholder="yourname@example.com" required>
-            <label for="adress">Adress:</label>
-            <input class="form-control" type="text" id="adress" placeholder="Earth Planet" required>
+            <input class="form-control" type="email" id="email" placeholder="seunome@exemplo.com" required>
+            <label for="adress">Endereço:</label>
+            <input class="form-control" type="text" id="adress" placeholder="Planeta Terra" required>
             <label for="creditCard">Card Banner</label>
             <select class="form-select" id="creditCard">
                 <option value="Mastercard">Mastercard</option>
@@ -97,7 +96,7 @@
                 <option value="Mastercard">American Express</option>
             </select>  
         </form>
-        <input type="submit" value="Finish Booking" class="btn btn-dark" id="finishBooking" onclick="finishBooking()">
+        <input type="submit" value="Finalizar Reserva" class="btn btn-dark" id="finishBooking" onclick="finishBooking()">
     </section>
     <script src="script.js"></script>
 </body>

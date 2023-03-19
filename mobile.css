@@ -81,6 +81,57 @@
     visibility: visible;
 }
 
+#changeLanguage1 {
+    position: fixed;
+    right: 50px;
+    top: 4px;
+    background-color: transparent;
+    border: 0;
+}
+
+#changeLanguage1 img {
+    width: 20px;
+    border: 1px solid white;
+}
+
+#language1 {
+    display: none;
+}
+
+.usa img {
+    width: 20px;
+    border: 1px solid white;
+    position: fixed;
+    top: 30px;
+    right: 50px;
+}
+
+
+#changeLanguage2 {
+    position: fixed;
+    right: 50px;
+    top: 0;
+    background-color: transparent;
+    border: 0;
+}
+
+#changeLanguage2 img {
+    width: 20px;
+    border: 1px solid white;
+}
+
+#language2 {
+    display: none;
+}
+
+.portugal img {
+    width: 20px;
+    border: 1px solid white;
+    position: fixed;
+    top: 30px;
+    right: 50px;
+}
+
 #section1 {
     margin-top: 70px;
     height: 350px;
