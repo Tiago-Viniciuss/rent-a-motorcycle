@@ -110,7 +110,7 @@
 #changeLanguage2 {
     position: fixed;
     right: 50px;
-    top: 0;
+    top: 4px;
     background-color: transparent;
     border: 0;
 }
