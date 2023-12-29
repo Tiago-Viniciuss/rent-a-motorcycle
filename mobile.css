@@ -423,11 +423,8 @@ table td {
 
 #complemental {
     width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: left;
-    margin: 5px;
+    margin: auto;
+    margin-top: 50px;
 }
 
 #complemental h3 {
@@ -443,12 +440,13 @@ table td {
 }
 
 #complemental input {
-    width: 250px;
+    width: 300px;
     padding: 8px;
     margin: auto;
     margin: 10px 0px;
 }
 
 .form-select {
-    width: 250px;
+    width: 300px;
+    margin: auto;
 }
