@@ -31,9 +31,9 @@
     </header>
     <nav id="menu" class="bg-dark">
         <a href="index.html" class="text-white text-decoration-none m-2">Home</a>
-        <a href="#" class="text-white text-decoration-none m-2">Equipe</a>
+        <a href="#" class="text-white text-decoration-none m-2">Equipa</a>
         <a href="#" class="text-white text-decoration-none m-2">Modelos</a>
-        <a href="#" class="text-white text-decoration-none m-2">Contato</a>
+        <a href="#" class="text-white text-decoration-none m-2">Contacto</a>
     </nav>
     <div id="menuComplement" class="bg-dark">
 
@@ -74,30 +74,85 @@
                 <td>Local da Devolução</td>
                 <td id="dropofLocationBook"></td>
             </tr>
+            <tr>
+                <td>Valor por Dia</td>
+                <td id="valuePerDay"></td>
+            </tr>
+            <tr>
+                <td>Número de Dias</td>
+                <td id="numberDays"></td>
+            </tr>
+            <tr>
+                <td>Valor Total</td>
+                <td id="totalValue"></td>
+            </tr>
         </tbody>
     </table>
     <div id="bikeChosen">
     </div>
     <section id="complemental">
-        <h3>Informações Complementares</h3>
-        <form>
-            <label for="phone">Número de Telefone:</label>
-            <input class="form-control" type="tel" id="phone" placeholder="000 000 000" required>
-            <label for="age">Idade:</label>
-            <input class="form-control" type="number" placeholder="18" id="age" required>
-            <label for="email">E-mail:</label>
-            <input class="form-control" type="email" id="email" placeholder="seunome@exemplo.com" required>
-            <label for="adress">Endereço:</label>
-            <input class="form-control" type="text" id="adress" placeholder="Planeta Terra" required>
-            <label for="creditCard">Card Banner</label>
-            <select class="form-select" id="creditCard">
-                <option value="Mastercard">Mastercard</option>
-                <option value="Mastercard">Visa</option>
-                <option value="Mastercard">American Express</option>
-            </select>  
+        <h3>Informação Complementar</h3>
+        <form onsubmit="finishBooking()" id="complementalForm">
+            <div>
+                <label for="phone">Telefone para Contacto:</label>
+                <input class="form-control" type="tel" id="phone" placeholder="000 000 000" required>
+            </div>
+            <div>
+                <label for="age">Idade:</label>
+                <input class="form-control" type="number" placeholder="18" id="age" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input class="form-control" type="email" id="email" placeholder="yourname@example.com" required>
+            </div>
+            <div>
+                <label for="adress">Morada:</label>
+                <input class="form-control" type="text" id="adress" placeholder="Earth Planet" required>
+            </div>
+            <div>
+                <label for="creditCard">Multibanco:</label>
+                <select class="form-select" id="creditCard">
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="Mastercard">Visa</option>
+                    <option value="Mastercard">American Express</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="form-control btn btn-dark" id="finishBooking">Finalizar Pedido</button>
+            </div>
         </form>
-        <input type="submit" value="Finalizar Reserva" class="btn btn-dark" id="finishBooking" onclick="finishBooking()">
     </section>
+    <footer id="footer" class="bg-dark">
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openClientPlus()">+ Suporte ao Cliente</p>
+        <div id="clientPlus">
+            <p>Contacte-nos</p>
+            <p>Linha de Segurança</p>
+            <p>Dúvidas sobre Pagamento</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openWorkshopPlus()">+ Oficina</p>
+        <div id="workshopPlus">
+            <p>Encontre uma Oficina</p>
+            <p>Explorando as Motas</p>
+            <p>Pilotagem Segura</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openInsurancePlus()">+ Seguro para Motas</p>
+        <div id="insurancePlus">
+            <p>Bike Tracker</p>
+            <p>Seguro Básico</p>
+            <p>Seguro Premium</p> 
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openAboutUsPlus()">+ Sobre Nós</p>
+        <div id="aboutUsPlus">
+            <p>Nossa História</p>
+            <p>Mídias Sociais</p>
+            <p>Trabalhe Conosco</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+    </footer>
     <script src="script.js"></script>
 </body>
 

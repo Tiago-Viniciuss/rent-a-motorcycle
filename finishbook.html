@@ -32,10 +32,10 @@
 
     </header>
     <nav id="menu" class="bg-dark">
-        <a href="index.html" class="text-white text-decoration-none m-2">Home</a>
+        <a href="index.html" class="text-white text-decoration-none m-2" onclick="closeMenu()">Home</a>
         <a href="#" class="text-white text-decoration-none m-2">Crew</a>
-        <a href="#" class="text-white text-decoration-none m-2">Models</a>
-        <a href="#" class="text-white text-decoration-none m-2">Contact</a>
+        <a href="#selectBikeTitle" class="text-white text-decoration-none m-2" onclick="closeMenu()">Models</a>
+        <a href="#footer" class="text-white text-decoration-none m-2" onclick="closeMenu()">Contact</a>
     </nav>
     <div id="menuComplement" class="bg-dark">
 
@@ -94,24 +94,67 @@
     </div>
     <section id="complemental">
         <h3>Complemental Information</h3>
-        <form>
-            <label for="phone">Phone Number:</label>
-            <input class="form-control" type="tel" id="phone" placeholder="000 000 000" required>
-            <label for="age">Age:</label>
-            <input class="form-control" type="number" placeholder="18" id="age" required>
-            <label for="email">E-mail:</label>
-            <input class="form-control" type="email" id="email" placeholder="yourname@example.com" required>
-            <label for="adress">Adress:</label>
-            <input class="form-control" type="text" id="adress" placeholder="Earth Planet" required>
-            <label for="creditCard">Card Banner</label>
-            <select class="form-select" id="creditCard">
-                <option value="Mastercard">Mastercard</option>
-                <option value="Mastercard">Visa</option>
-                <option value="Mastercard">American Express</option>
-            </select>  
+        <form onsubmit="finishBooking()" id="complementalForm">
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input class="form-control" type="tel" id="phone" placeholder="000 000 000" required>
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input class="form-control" type="number" placeholder="18" id="age" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input class="form-control" type="email" id="email" placeholder="yourname@example.com" required>
+            </div>
+            <div>
+                <label for="adress">Adress:</label>
+                <input class="form-control" type="text" id="adress" placeholder="Earth Planet" required>
+            </div>
+            <div>
+                <label for="creditCard">Card Banner</label>
+                <select class="form-select" id="creditCard">
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="Mastercard">Visa</option>
+                    <option value="Mastercard">American Express</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="form-control btn btn-dark" id="finishBooking">Finish Booking</button>
+            </div>
         </form>
-        <input type="submit" value="Finish Booking" class="btn btn-dark" id="finishBooking" onclick="finishBooking()">
     </section>
+    <footer id="footer" class="bg-dark">
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openClientPlus()">+ Client Support</p>
+        <div id="clientPlus">
+            <p>Phone Number</p>
+            <p>Red Line</p>
+            <p>Payment Doubt</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openWorkshopPlus()">+ Workshop</p>
+        <div id="workshopPlus">
+            <p>Find a Workshop</p>
+            <p>Knowing the Bike</p>
+            <p>Ride Safe</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openInsurancePlus()">+ Bike Insurance</p>
+        <div id="insurancePlus">
+            <p>Bike Tracker</p>
+            <p>Standard Insurance</p>
+            <p>Premium Insurance</p> 
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+        <p onclick="openAboutUsPlus()">+ About Us</p>
+        <div id="aboutUsPlus">
+            <p>Our Story</p>
+            <p>Social Media</p>
+            <p>Work With Us</p>
+        </div>
+        <hr width="80%" class="text-white border-4 d-block mx-auto">
+    </footer>
     <script src="script.js"></script>
 </body>
 

@@ -34,9 +34,9 @@
     </header>
     <nav id="menu" class="bg-dark">
         <a href="#" class="text-white text-decoration-none m-2" onclick="closeMenu()">Home</a>
-        <a href="#" class="text-white text-decoration-none m-2">Equipe</a>
+        <a href="#" class="text-white text-decoration-none m-2">Equipa</a>
         <a href="#selectBikeTitle" class="text-white text-decoration-none m-2" onclick="closeMenu()">Modelos</a>
-        <a href="#footer" class="text-white text-decoration-none m-2" onclick="closeMenu()">Contato</a>
+        <a href="#footer" class="text-white text-decoration-none m-2" onclick="closeMenu()">Contacto</a>
     </nav>
     <div id="menuComplement" class="bg-dark">
 
@@ -45,7 +45,7 @@
         <div class="ms-4">
             <h1>Pronto para a Estrada?</h1>
             <p>
-                Alugue uma Moto!
+                Alugue uma Mota!
             </p>
             <img id="bike1" src="imagens/motorcycle1.png" alt="">
         </div>
@@ -56,15 +56,15 @@
         <p>Encontre algumas dicas aqui:</p>
         <div id="tips">
             <div class="bg-dark" id="chooseBike"></div>
-            <p>Você pode encontrar mais de 25 modelos de motocicletas e escolher a que melhor se adequa às suas necessidades
+            <p>Você pode encontrar diversos modelos de motocicletas e escolher a que melhor se adequa às suas necessidades
             </p>
             <div class="bg-dark" id="callOperator"></div>
             <p>Com uma simples ligação, mensagem ou através do nosso app, você pode falar com nossos amigáveis operadores</p>
             <div class="bg-dark" id="hitTheRoad"></div>
-            <p>O próximo passo é pegar sua moto em uma de nossas lojas e cair na estrada! Aproveite!</p>
+            <p>O próximo passo é pegar sua mota em uma de nossas lojas e partir à estrada! Aproveite!</p>
         </div>
     </section>
-    <h2 class="selectBikeTitle" id="selectBikeTitle">Modelos de Motos</h2>
+    <h2 class="selectBikeTitle" id="selectBikeTitle">Modelos de Motas</h2>
     <p class="selectBikeParagraph">Faça sua melhor escolha e aproveite!</p>
     <section id="selectBike">
         <div id="bikeMarks">
@@ -110,30 +110,36 @@
                     </tr>
                 </tbody>
             </table>
-            <input class="form-control" type="text" id="username" placeholder="Qual o seu nome?" required>
-            <button class="btn btn-dark" id="reserveButton" onclick="openBooking()">Reserve agora</button>
+            <form>
+                <input required class="form-control" type="text" id="username" placeholder="What's your name?">
+                <button onclick="openBooking(event)" class="btn btn-dark" id="reserveButton">Reserve Agora</button>
+            </form>
         </div>
     </section>
-    <div id="booking">
-        <label class="form-label">Retirar a moto em:</label>
+    <form id="booking">
+        <label class="form-label">Retirar a mota em:</label>
         <select class="form-select form-control" id="pickup">
-            <option class="pickup">Aeroporto</option>
-            <option class="pickup">Garden Village</option>
-            <option class="pickup">R2W Centro</option>
+            <option class="pickup">Aeroporto de Lisboa</option>
+            <option class="pickup">Campo de Ourique</option>
+            <option class="pickup">Costa da Caparica</option>
+            <option class="pickup">Setúbal</option>
         </select>
-        <label class="form-label">Devolver moto em:</label>
-        <select class="form-select form-control" id="dropof">
-            <option>Aeroporto</option>
-            <option>Garden Village</option>
-            <option>R2W Centro</option>
+        <label class="form-label">Devolver a mota em:</label>
+        <select class="form-select form-control" id="dropoff">
+            <option class="dropoff">Aeroporto de Lisboa</option>
+            <option class="dropoff">Campo de Ourique</option>
+            <option class="dropoff">Costa da Caparica</option>
+            <option class="dropoff">Setúbal</option>
         </select>
-        <label>Data da retirada:</label> <br>
-        <input type="date" class="form-control" id="pickupDate"> <br>
-        <label>Data da devolução:</label> <br>
-        <input type="date" class="form-control" id="dropofDate"> <br>
-        <input type="submit" value="Enviar Pedido" id="sendRequest" onclick="sendRequest()"> <br>
-        <button class="btn" onclick="cancelBooking()">Cancelar</button>
-    </div>
+        <label>Data da retirada:</label>
+        <input required type="date" class="form-control" id="pickupDate">
+        <label>Data da devolução:</label>
+        <input required type="date" class="form-control" id="dropoffDate">
+        <div id="sendRequestButtons">
+            <button onclick="sendRequest()" class="btn btn-dark form-control">Send Request</button>
+            <button class="btn btn-secondary form-control" onclick="cancelBooking()">Cancel</button>
+        </div>
+    </form>
     <article id="article">
         <h2>
             Por que viajar de moto?
@@ -163,23 +169,33 @@
     </article>
     <footer id="footer" class="bg-dark">
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p onclick="openClientPlus()">+ Suporte ao cliente</p>
+        <p onclick="openClientPlus()">+ Suporte ao Cliente</p>
         <div id="clientPlus">
-            <p>Nosso Telefone</p>
-            <p>Linha Vermelha</p>
-            <p>Dúvidas com Pagamentos</p>
+            <p>Contacte-nos</p>
+            <p>Linha de Segurança</p>
+            <p>Dúvidas sobre Pagamento</p>
         </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
         <p onclick="openWorkshopPlus()">+ Oficina</p>
         <div id="workshopPlus">
             <p>Encontre uma Oficina</p>
-            <p>Conhecendo a Moto</p>
+            <p>Explorando as Motas</p>
             <p>Pilotagem Segura</p>
         </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p>+ Seguro da Moto</p>
+        <p onclick="openInsurancePlus()">+ Seguro para Motas</p>
+        <div id="insurancePlus">
+            <p>Bike Tracker</p>
+            <p>Seguro Básico</p>
+            <p>Seguro Premium</p> 
+        </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p>+ Sobre Nós</p>
+        <p onclick="openAboutUsPlus()">+ Sobre Nós</p>
+        <div id="aboutUsPlus">
+            <p>Nossa História</p>
+            <p>Mídias Sociais</p>
+            <p>Trabalhe Conosco</p>
+        </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
     </footer>
     <script src="script.js"></script>

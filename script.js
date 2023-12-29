@@ -124,14 +124,16 @@ function openBooking(event) {
     let mark = String(bikeMarkName1.innerText)
     let username = String(username1.value)
 
-    
+    if (username.length != 0) {
         localStorage.setItem('Bike Name', name)
         localStorage.setItem('Bike Mark', mark)
         localStorage.setItem('Username', username)
 
         booking.style.display = 'block'
-        location.href = '#booking'
+        location.href = '#reserveButton'
         event.preventDefault()
+    }
+        
     
 }
 
@@ -309,4 +311,16 @@ function openWorkshopPlus() {
     let workshopMenu = document.getElementById('workshopPlus')
 
     workshopMenu.classList.toggle('on')
+}
+
+function openInsurancePlus() {
+    let insuranceMenu = document.getElementById('insurancePlus')
+
+    insuranceMenu.classList.toggle('on')
+}
+
+function openAboutUsPlus() {
+    let aboutUsMenu = document.getElementById('aboutUsPlus')
+
+    aboutUsMenu.classList.toggle('on')
 }

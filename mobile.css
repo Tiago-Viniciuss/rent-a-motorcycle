@@ -323,7 +323,7 @@ table td {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 80%;
+    width: 300px;
     margin: auto;
 }
 
@@ -399,6 +399,44 @@ table td {
 }
 
 
+#insurancePlus {
+    height: 0px;
+    visibility: hidden;
+    transition: .5s;
+    overflow-y: hidden;
+    
+}
+
+#insurancePlus.on {
+    visibility: visible;
+    height: 150px;
+}
+
+#insurancePlus p {
+    font-size: 0.8em;
+    margin: 2px 0px 2px 45px;
+}
+
+
+#aboutUsPlus {
+    height: 0px;
+    visibility: hidden;
+    transition: .5s;
+    overflow-y: hidden;
+    
+}
+
+#aboutUsPlus.on {
+    visibility: visible;
+    height: 150px;
+}
+
+#aboutUsPlus p {
+    font-size: 0.8em;
+    margin: 2px 0px 2px 45px;
+}
+
+
 /*
     Finish Book
 */
@@ -421,29 +459,20 @@ table td {
 }
 
 
-#complemental {
-    width: 300px;
+#complementalForm {
     margin: auto;
-    margin-top: 50px;
+    width: 300px;
+}
+
+#complementalForm div {
+    margin: 20px;
+    width: 280px;
 }
 
 #complemental h3 {
-    margin-bottom: 20px;
+    margin: 40px 0px 20px 0px;
     text-align: center;
     font-size: 1.3em;
-}
-
-#complemental label {
-    font-weight: bold;
-    font-size: 0.8em;
-    margin: auto;
-}
-
-#complemental input {
-    width: 300px;
-    padding: 8px;
-    margin: auto;
-    margin: 10px 0px;
 }
 
 .form-select {

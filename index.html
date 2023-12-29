@@ -63,7 +63,7 @@
         <p>You can find here some tips:</p>
         <div id="tips">
             <div class="bg-dark" id="chooseBike"></div>
-            <p>You can find more than 25 models of motorcycles and choose the best bike for your needs
+            <p>You can find many models of motorcycles and choose the best bike for your needs
             </p>
             <div class="bg-dark" id="callOperator"></div>
             <p>With a simple call, message or using the app, you can talk with our friendly operators</p>
@@ -126,15 +126,17 @@
     <form id="booking">
         <label class="form-label">Pick-up Location:</label>
         <select class="form-select form-control" id="pickup">
-            <option class="pickup">R2W Lisbon Airport</option>
-            <option class="pickup">R2W Old Town</option>
-            <option class="pickup">R2W Lisbon Downtown</option>
+            <option class="pickup">Lisbon Airport</option>
+            <option class="pickup">Campo de Ourique</option>
+            <option class="pickup">Costa da Caparica</option>
+            <option class="pickup">Setúbal</option>
         </select>
         <label class="form-label">Drop-off Location:</label>
         <select class="form-select form-control" id="dropoff">
-            <option class="dropoff">R2W Lisbon Airport</option>
-            <option class="dropoff">R2W Old Town</option>
-            <option class="dropoff">R2W Lisbon Downtown</option>
+            <option class="dropoff">Lisbon Airport</option>
+            <option class="dropoff">Campo de Ourique</option>
+            <option class="dropoff">Costa da Caparica</option>
+            <option class="dropoff">Setúbal</option>
         </select>
         <label>Pick-up Date:</label>
         <input required type="date" class="form-control" id="pickupDate">
@@ -189,9 +191,19 @@
             <p>Ride Safe</p>
         </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p>+ Bike Insurance</p>
+        <p onclick="openInsurancePlus()">+ Bike Insurance</p>
+        <div id="insurancePlus">
+            <p>Bike Tracker</p>
+            <p>Standard Insurance</p>
+            <p>Premium Insurance</p> 
+        </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
-        <p>+ About Us</p>
+        <p onclick="openAboutUsPlus()">+ About Us</p>
+        <div id="aboutUsPlus">
+            <p>Our Story</p>
+            <p>Social Media</p>
+            <p>Work With Us</p>
+        </div>
         <hr width="80%" class="text-white border-4 d-block mx-auto">
     </footer>
     <script src="script.js"></script>
