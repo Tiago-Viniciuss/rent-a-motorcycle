@@ -41,22 +41,14 @@ function changeLogo() {
 function changeLanguage1() {
     let language1 = document.getElementById('language1')
 
-    if(language1.style.display == 'none') {
-        language1.style.display = 'block'
-    } else {
-        language1.style.display = 'none'
-    }
+    language1.style.display = 'block'
     
 }
 
 function changeLanguage2() {
     let language2 = document.getElementById('language2')
 
-    if(language2.style.display == 'none') {
-        language2.style.display = 'block'
-    } else {
-        language2.style.display = 'none'
-    }
+    language2.style.display = 'block'
 }
 
 const bikes = document.querySelectorAll('.bikeMark')
@@ -119,10 +111,11 @@ bikes.forEach((bikeMark, indice) => {
 
         localStorage.setItem ('Bike Picture', indice)
     })
-
+    
 })
 
-function openBooking() {
+function openBooking(event) {
+    
     let booking = document.getElementById('booking')
     let bikeName1 = document.getElementById('bikeName')
     let bikeMarkName1 = document.getElementById('bikeMarkName')
@@ -131,83 +124,175 @@ function openBooking() {
     let mark = String(bikeMarkName1.innerText)
     let username = String(username1.value)
 
-    if (username.length > 0) {
+    
         localStorage.setItem('Bike Name', name)
         localStorage.setItem('Bike Mark', mark)
         localStorage.setItem('Username', username)
 
         booking.style.display = 'block'
         location.href = '#booking'
-    } else {
-        alert('Write your name, please!')
-    }
+        event.preventDefault()
+    
 }
 
 function sendRequest() {
-    let pickuplocation = document.getElementById('pickup')
-    let dropoflocation = document.getElementById('dropof')
-    let pickupDate1 = document.getElementById('pickupDate')
-    let dropofDate1 = document.getElementById('dropofDate')
+    // Obter os valores dos campos do formulário
+    var pickupLocation = document.getElementById('pickup').value;
+    var dropoffLocation = document.getElementById('dropoff').value;
+    var pickupDate = document.getElementById('pickupDate').value;
+    var dropoffDate = document.getElementById('dropoffDate').value;
 
-    let pickupvalue = pickuplocation.options[pickuplocation.selectedIndex].value
-    let dropofvalue = dropoflocation.options[dropoflocation.selectedIndex].value
-    let pickupDate = String(pickupDate1.value)
-    let dropofDate = String(dropofDate1.value)
-    let pickDate = pickupDate.split('-').reverse().join('/')
-    let dropDate = dropofDate.split('-').reverse().join('/')
+    // Formatar as datas como dd/mm/aaaa
+    var formattedPickupDate = formatDateString(pickupDate);
+    var formattedDropoffDate = formatDateString(dropoffDate);
 
-    if (pickupDate.length == 0 || dropofDate.length == 0) {
-        alert('Insert date, please!')
-    } else {
-        localStorage.setItem('Pick-up Location', pickupvalue)
-        localStorage.setItem('Drop-of Location', dropofvalue)
-        localStorage.setItem('Pick-up Date', pickDate)
-        localStorage.setItem('Drop-of Date', dropDate)
-        location.href = 'finishbook.html'
-    }
-}
+    // Armazenar no localStorage
 
-function cancelBooking() {
-    let booking = document.getElementById('booking')
+    localStorage.setItem('pickupLocation', pickupLocation);
+    localStorage.setItem('dropoffLocation', dropoffLocation);
+    localStorage.setItem('formattedPickupDate', formattedPickupDate);
+    localStorage.setItem('formattedDropoffDate', formattedDropoffDate);
 
-    booking.style.display = 'none'
-}
+    location.href = 'finishbook.html'
+    alert('Enviando Pedido')
+  }
+
+  function formatDateString(dateString) {
+    // Criar um objeto Date para manipular a data
+    var dateObject = new Date(dateString);
+
+    // Extrair dia, mês e ano
+    var day = dateObject.getDate();
+    var month = dateObject.getMonth() + 1; // Mês é baseado em zero, então adicionamos 1
+    var year = dateObject.getFullYear();
+
+    
+
+    // Formatar a data como dd/mm/aaaa
+    return day + '/' + month + '/' + year;
+
+    
+  }
+
+  
+
+  function cancelBooking() {
+    // Limpar o localStorage
+    localStorage.clear();
+    alert('Booking canceled. Local Storage cleared.');
+  }
 
 function loadData() {
     let username = document.getElementById('usernameBook')
     let bikeModel = document.getElementById('bikemodelBook')
     let bikeMarkName = document.getElementById('bikemarkBook')
-    let pickupDate = document.getElementById('pickupDateBook')
-    let dropofDate = document.getElementById('dropofDateBook')
+    let pickupDateBook = document.getElementById('pickupDateBook')
+    let dropoffDateBook = document.getElementById('dropofDateBook')
     let pickuplocation = document.getElementById('pickupLocationBook')
     let dropoflocation = document.getElementById('dropofLocationBook')
     let bikePicture = document.getElementById('bikeChosen')
-    
+    let valueDay = document.getElementById('valuePerDay')
+    let numberDays = document.getElementById('numberDays')
+    let totalValue = document.getElementById('totalValue')
+
     username.innerText = localStorage.getItem('Username')
     bikeModel.innerText = localStorage.getItem('Bike Name')
     bikeMarkName.innerText = localStorage.getItem('Bike Mark')
-    pickupDate.innerText = localStorage.getItem('Pick-up Date')
-    dropofDate.innerText = localStorage.getItem('Drop-of Date')
-    pickuplocation.innerText = localStorage.getItem('Pick-up Location')
-    dropoflocation.innerText = localStorage.getItem('Drop-of Location')
+    pickupDateBook.innerText = localStorage.getItem('formattedPickupDate')
+    dropoffDateBook.innerText = localStorage.getItem('formattedDropoffDate')
+    pickuplocation.innerText = localStorage.getItem('pickupLocation')
+    dropoflocation.innerText = localStorage.getItem('dropoffLocation')
     let indice = localStorage.getItem('Bike Picture')
 
-    
+    var pickupDate = localStorage.getItem('formattedPickupDate');
+    var dropoffDate = localStorage.getItem('formattedDropoffDate');
 
+    console.log('pickupDate from localStorage:', pickupDate);
+    console.log('dropoffDate from localStorage:', dropoffDate);
+
+    // Verificar se as datas do localStorage estão definidas
+    if (!pickupDate || !dropoffDate) {
+      alert('Datas não encontradas no localStorage. Certifique-se de que as datas foram salvas corretamente.');
+      return;
+    }
+
+    // Converter as datas para objetos Date
+    var pickupDateObj = parseDateString(pickupDate);
+    var dropoffDateObj = parseDateString(dropoffDate);
+
+    console.log('pickupDateObj:', pickupDateObj);
+    console.log('dropoffDateObj:', dropoffDateObj);
+
+    // Verificar se as datas são válidas
+    if (!pickupDateObj || !dropoffDateObj || isNaN(pickupDateObj.getTime()) || isNaN(dropoffDateObj.getTime())) {
+      alert('Datas inválidas. Certifique-se de que as datas foram salvas corretamente.');
+      return;
+    }
+
+    // Calcular a diferença em milissegundos entre as datas
+    var timeDiff = dropoffDateObj.getTime() - pickupDateObj.getTime();
+
+    // Calcular o número de dias
+    var daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+    let calcMoto0 = daysDiff * 45
+    let calcMoto1 = daysDiff * 65
+    let calcMoto2 = daysDiff * 65
+    let calcMoto3 = daysDiff * 70
+    let calcMoto4 = daysDiff * 60
+    let calcMoto5 = daysDiff * 75
+
+
+    console.log(calcMoto0)
 
     if (indice == 0) {
         bikePicture.style.backgroundImage = 'url(imagens/iron883.png)'
+        valueDay.innerText = '$45'
+        numberDays.innerText = daysDiff
+        totalValue.innerHTML = `$${calcMoto0}`
     } else if (indice == 1) {
         bikePicture.style.backgroundImage = 'url(imagens/fortyeight.png)'
+        valueDay.innerText = '$65'
+        numberDays.innerText = daysDiff
+        totalValue.innerHTML = `$${calcMoto1}`
     } else if (indice == 2) {
         bikePicture.style.backgroundImage = 'url(imagens/ftr1200.png)'
+        valueDay.innerText = '$65'
+        numberDays.innerText = daysDiff
+        totalValue.innerHTML = `$${calcMoto2}`
     } else if (indice == 3 ) {
         bikePicture.style.backgroundImage = 'url(imagens/bmwk1300s.png)'
+        valueDay.innerText = '$70'
+        numberDays.innerText = daysDiff
+        totalValue.innerHTML = `$${calcMoto3}`
     } else if (indice == 4) {
         bikePicture.style.backgroundImage = 'url(imagens/ducatienduro.png)'
+        valueDay.innerText = '$60'
+        numberDays.innerText = daysDiff
+        totalValue.innerHTML = `$${calcMoto4}`
     } else if (indice == 5 ){
         bikePicture.style.backgroundImage = 'url(imagens/ducatimonster1200.png)'
+        valueDay.innerText = '$75'
+        numberDays.innerText = daysDiff
+        totalValue.innerHTML = `$${calcMoto5}`
     }
+  }
+
+  
+
+  // Função para converter string de data no formato dd/mm/aaaa para objeto Date
+  function parseDateString(dateString) {
+    var parts = dateString.split('/');
+    if (parts.length === 3) {
+      var day = parseInt(parts[0], 10);
+      var month = parseInt(parts[1], 10) - 1; // Mês é baseado em zero
+      var year = parseInt(parts[2], 10);
+      return new Date(year, month, day);
+    }
+    return null;
+  
+    
+    
 }
 
 function finishBooking() {

@@ -24,12 +24,19 @@
             <a href="index.html
             "><img id="brandDesktop" src="imagens/brandDesktop.png" alt=""></a>
         </div>
-        <button id="changeLanguage1" onclick="changeLanguage2()"><img src="imagens/language1.png" alt=""></button>
+
+        <button id="changeLanguage1" onclick="changeLanguage2()">
+            <img src="imagens/language1.png" alt="">
+        </button>
+
         <a href="siteportugues.html" id="language2">
-            <span class="portugal"><img src="imagens/language2.png" alt=""></span></a>
+            <span class="portugal">
+                <img src="imagens/language2.png" alt="">
+            </span>
+        </a>
+
         <button class="btn text-white border-0 material-symbols-outlined" id="menuButton"
             onclick="showMenu()">menu</button>
-
     </header>
     <nav id="menu" class="bg-dark">
         <a href="#" class="text-white text-decoration-none m-2" onclick="closeMenu()">Home</a>
@@ -109,40 +116,38 @@
                     </tr>
                 </tbody>
             </table>
-            <input class="form-control" type="text" id="username" placeholder="What's your name?" required>
-            <button class="btn btn-dark" id="reserveButton" onclick="openBooking()">Reserve Now</button>
+            <form>
+                <input required class="form-control" type="text" id="username" placeholder="What's your name?">
+                <button onclick="openBooking(event)" class="btn btn-dark" id="reserveButton">Reserve Now</button>
+            </form>
         </div>
     </section>
-    <div id="booking">
+    <form id="booking">
         <label class="form-label">Pick-up Location:</label>
         <select class="form-select form-control" id="pickup">
-            <option class="pickup">Airport</option>
-            <option class="pickup">Garden Village</option>
-            <option class="pickup">R2W Downtown</option>
+            <option class="pickup">R2W Lisbon Airport</option>
+            <option class="pickup">R2W Old Town</option>
+            <option class="pickup">R2W Lisbon Downtown</option>
         </select>
         <label class="form-label">Drop-off Location:</label>
-        <select class="form-select form-control" id="dropof">
-            <option>Airport</option>
-            <option>Garden Village</option>
-            <option>R2W Downtown</option>
+        <select class="form-select form-control" id="dropoff">
+            <option class="dropoff">R2W Lisbon Airport</option>
+            <option class="dropoff">R2W Old Town</option>
+            <option class="dropoff">R2W Lisbon Downtown</option>
         </select>
-        <label>Pick-up date:</label> <br>
-        <input type="date" class="form-control" id="pickupDate"> <br>
-        <label>Drop-off date:</label> <br>
-        <input type="date" class="form-control" id="dropofDate"> <br>
-        <input type="submit" value="Send Request" id="sendRequest" onclick="sendRequest()"> <br>
-        <button class="btn" onclick="cancelBooking()">Cancel</button>
-    </div>
+        <label>Pick-up Date:</label>
+        <input required type="date" class="form-control" id="pickupDate">
+        <label>Drop-off Date:</label>
+        <input required type="date" class="form-control" id="dropoffDate">
+        <div id="sendRequestButtons">
+            <button onclick="sendRequest()" class="btn btn-dark form-control">Send Request</button>
+            <button class="btn btn-secondary form-control" onclick="cancelBooking()">Cancel</button>
+        </div>
+    </form>
     <article id="article">
         <h2>
             Why to travel by motorcycle?
         </h2>
-        <div>
-            <iframe class="d-block mx-auto mt-3 mb-5" width="320" height="315"
-                src="https://www.youtube.com/embed/X9eg00Sx6kM" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
         <p>
             Traveling by motorcycle can be an amazing and unforgettable experience for those who enjoy adventure and
             freedom. Unlike other forms of transportation, traveling by motorcycle allows for a greater connection with

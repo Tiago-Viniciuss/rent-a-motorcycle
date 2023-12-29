@@ -293,7 +293,7 @@ table td {
     margin-bottom: 20px;
 }
 
-#pickupDate, #dropofDate {
+#pickupDate, #dropoffDate {
     padding: 8px;
     margin: auto;
     margin-bottom: 20px;
@@ -319,13 +319,12 @@ table td {
     background-color: rgb(197, 66, 66);
 }
 
-#booking button {
-    background-color: lightgray;
-    color: black;
-    font-weight: 700;
-    width: 150px;
-    margin: 15px;
-    border-radius: 2px;
+#sendRequestButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin: auto;
 }
 
 #booking button:hover {
